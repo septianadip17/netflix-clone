@@ -32,9 +32,10 @@ h1 {
   line-height: 1.1;
 }
 
+/* 
 h2 {
   font-size: 500px;
-}
+} */
 
 h3 {
   font-size: 26px;
@@ -50,6 +51,36 @@ section {
   width: 100%;
   border-bottom: 8px solid var(--section-border-color);
   padding: 70px 45px;
+}
+
+section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section .info {
+  width: 52%;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 0 3rem;
+}
+
+section .info h2 {
+  margin-bottom: 20px;
+}
+
+section .img_container {
+  width: 48%;
+  flex: 0 1 auto;
+}
+
+section .img_container img {
+  width: 100%;
 }
 
 button {
@@ -211,4 +242,86 @@ section#hero::before {
 
 .membership .input_container button {
   background-color: var(--btn-active-color);
+}
+
+/* Sections */
+
+#section_mobile .container,
+#section_kids .container {
+  flex-direction: row-reverse;
+}
+
+#section_tv .info,
+#section_watch_everywhere .info {
+  padding: 0 3rem 0 0;
+}
+
+#section_mobile .img_container,
+#section_kids .img_container {
+  margin-right: 3rem;
+}
+
+/* Section FAQ */
+#section_faq .container {
+  flex-direction: column;
+  align-items: center;
+}
+
+#section_faq h2 {
+  text-align: center;
+}
+
+#section_faq ul {
+  margin: 2rem auto;
+  width: 75%;
+  max-width: 815px;
+}
+
+#section_faq ul li {
+  list-style: none;
+  font-size: 1.625rem;
+  margin-bottom: 8px;
+}
+
+#section_faq .question {
+  font-weight: 400;
+  margin-bottom: 1px;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  background-color: #303030;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+#section_faq .question .close_button {
+  position: absolute;
+  font-size: 50px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease-in-out;
+}
+
+#section_faq .answer {
+  overflow: hidden;
+  background: #303030;
+  max-height: 0;
+  transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+}
+
+#section_faq .answer span {
+  padding: 1.2rem;
+  display: inline-block;
+}
+
+#section_faq .question.open+.answer {
+  max-height: 1200px;
+}
+
+#section_faq .question.open>.close_button {
+  transform: rotate(45deg);
 }
